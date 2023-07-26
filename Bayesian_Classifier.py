@@ -20,7 +20,7 @@ def specific_class_conditional_lab2(x, xv, y, yv):
     if count != 0:
         prob = count / total_samples
     else:
-        prob = 0.01
+        prob = 1e-6
 
     return prob
 
@@ -163,7 +163,7 @@ def class_conditional_gaussian(X, y):
         class_cond_probs[f"{y.name}={y_value}"] = {
             feature: {
                 'mean': np.mean(X_given_y[feature]),
-                'std': np.std(X_given_y[feature]) + 0.0001
+                'std': np.std(X_given_y[feature]) + 1e-6
             }
             for feature in X.columns
         }
