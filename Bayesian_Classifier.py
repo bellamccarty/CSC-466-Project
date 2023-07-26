@@ -84,6 +84,7 @@ def exercise_6_lab2(Xtrain, ytrain, Xtest, ytest, prior_type='uniform'):
         post_probs = posteriors(probs, priors, x)
 
         predicted_class = max(post_probs, key=post_probs.get)
+        print(predicted_class)
 
         if predicted_class.split("|")[0].strip().split("=")[1] == ytest.iloc[i]:  # Compare predicted_class as string
             correct_predictions += 1
