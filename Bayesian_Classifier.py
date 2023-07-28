@@ -191,7 +191,6 @@ def exercise_6_gaussian(Xtrain, ytrain, Xtest, ytest, prior_type='uniform'):
         post_probs = posteriors_gaussian(class_cond_probs, priors, x)
 
         predicted_class = max(post_probs, key=post_probs.get)
-        print(ytest.iloc[i])
         
         if predicted_class.split("=")[1] == ytest.iloc[i]:
             correct_predictions += 1
